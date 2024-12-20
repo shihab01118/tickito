@@ -61,6 +61,18 @@ const EventList = () => {
           <p className='text-gray-600 mt-1'>Check back later for new events</p>
         </div>
       )}
+
+      {/* Past Events Section */}
+      {pastEvents.length > 0 && (
+        <>
+          <h2 className='text-3xl font-bold text-gray-900 mb-6'>Past Events</h2>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+            {pastEvents.map((event) => (
+              <EventCard key={event._id} eventId={event._id} />
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 };
